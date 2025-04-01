@@ -1,0 +1,146 @@
+/* Основной стиль для страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Градиентный фон */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+/* Контейнер для формы и отсчета */
+.container {
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Стиль для ссылки */
+a {
+    color: #ffeb3b;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff5722;
+}
+
+/* Стиль для обратного отсчета */
+.countdown {
+    font-size: 3rem;
+    margin-top: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffeb3b;
+}
+
+.countdown span {
+    font-size: 2rem;
+    color: #ff5722;
+}
+
+/* Стили для формы */
+form {
+    margin-top: 30px;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+input[type="radio"] {
+    margin: 10px;
+    transform: scale(1.2);
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff7e5f;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Применяем анимацию к контейнерам */
+.container {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .countdown {
+        font-size: 2.5rem;
+    }
+}
