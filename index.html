@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қадиша апамыздың 70 жылдық тойы</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Қадиша апамыздың 70 жылдық тойы</h1>
+        <h2>Той иелері: Байзовтар әулеті</h2>
+        <h2>Күні: 26.04.2025</h2>
+        <h2>Уақыты: 17:00</h2>
+        <h2>Мекен-жайы: Боралдай ауылы, Марғұлан 1а көшесі</h2>
+
+        <p>Келесі мекен-жайдан таба аласыз:</p>
+        <a href="https://2gis.kz/almaty/geo/70030076166200577/76.867851,43.367321" target="_blank">2ГИС арқылы көру</a>
+
+        <h3>Келесіз бе?</h3>
+        <form action="/submit" method="post">
+            <label>
+                <input type="radio" name="answer" value="yes" required> Иә
+            </label><br>
+            <label>
+                <input type="radio" name="answer" value="no"> Өкінішке орай,жоқ
+            </label><br><br>
+            <label>
+                <input type="radio" name="answer" value="partner"> Жұбыммен келемін
+            </label><br><br>
+
+            <label for="comment">Атыңызды жазыңыз:</label><br>
+            <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Атыңызды жазыңыз..."></textarea><br><br>
+            
+            <input type="submit" value="Жіберу">
+        </form>
+
+        <h3>Той саланатына дейін</h3>
+        <div id="countdown" class="countdown">
+            <span id="days"></span> күн
+            <span id="hours"></span> сағат
+            <span id="minutes"></span> минут
+            <span id="seconds"></span> секунд
+        </div>
+    </div>
+
+    <script>
+        // Устанавливаем дату события
+        const eventDate = new Date("April 26, 2025 17:00:00").getTime();
+
+        // Обновляем обратный отсчет каждую секунду
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            // Вычисляем дни, часы, минуты и секунды
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Выводим результаты
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            // Если время вышло, отображаем сообщение
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "Тойға дайындық басталды!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
